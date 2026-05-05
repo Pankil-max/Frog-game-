@@ -1,0 +1,131 @@
+Create a Phaser 3 project for a browser game.
+Make a simple game scene with a scrolling background and a ground platform.
+Add a frog character (use a simple square or placeholder sprite).
+The frog should be affected by gravity and stand on the ground.
+Set up proper Phaser config and game loop structure.
+Keep code clean and minimal.
+
+Add jump mechanics to the frog.
+When spacebar or screen tap is pressed, the frog should jump with upward velocity.
+Ensure gravity pulls it back down smoothly.
+Prevent double jump unless it lands first.
+
+Add obstacles that spawn from the right side and move left continuously.
+Obstacles should have random spacing.
+If frog collides with an obstacle, the game should restart.
+Use simple shapes for obstacles (rectangles or spikes).
+
+Add a score system that increases over time based on survival duration.
+Display score on top left corner.
+Show "Game Over" screen with final score when player dies.
+
+Gradually increase game difficulty based on score/time.
+Make obstacles move faster and spawn more frequently as score increases.
+at first also increase little speed it was way too slow then gradually increase difficuly not very slow not too fast
+
+Improve game feel by adding:
+
+smooth camera movement
+jump animation or scale effect
+slight screen shake on collision
+Keep changes simple and performance friendly.
+
+Add:
+smoother jump arc (adjust gravity + velocity)
+better collision detection (less unfair deaths)
+slight camera follow or shake
+faster response on jump input
+
+Goal: game should feel “fun for 10 seconds”, not just “working”
+
+You should now refine:
+
+Obstacles system:
+spawn system becomes predictable but challenging
+add gap variations
+prevent impossible patterns
+Speed system:
+game speed slowly increases over time
+background scroll speed matches player speed
+Add:
+score multiplier over time
+distance-based scoring (not time only)
+difficulty tiers:
+easy (0–30 sec)
+medium
+hard
+insane
+
+Bees / flies / bugs
+bee = speed boost this should increase the overall speed of game for few seconds 
+fly = slow motion
+special bug = hallucination effect
+make some medicine type capsule also by eating which we get shield and when touch obstacle the shield goes away but char doesnt die
+
+Snake enemy
+moves across path (not just static obstacle)
+
+
+ Hallucination effect
+screen shake + blur + inverted colors for few seconds
+
+Make it feel like a real arcade game:
+
+Start screen (“Tap to Start”)
+Game over screen (retry button)
+best score saving (local storage)
+restart without reload
+
+Improvements 
+Improve the overall game mechanics and player experience of my Phaser 3 endless runner game.
+
+FOCUS AREAS:
+
+1. PLAYER PHYSICS (CRITICAL)
+- Make jump feel smooth and responsive
+- Adjust gravity and jump velocity for a natural arc
+- Add slight coyote time (allow jump shortly after leaving ground)
+- Add jump buffering (if player presses jump slightly early, still trigger jump)
+
+2. COLLISION SYSTEM (VERY IMPORTANT)
+- Fix unfair collisions
+- Reduce player hitbox slightly (forgiving collision)
+- Ensure collision matches visible sprite (no invisible edges)
+- Add small margin of error so perfect jumps are rewarded
+
+3. OBSTACLE SYSTEM (CRITICAL FIX)
+- Ensure obstacle placement is ALWAYS possible to pass
+- Prevent impossible patterns
+- Add minimum safe distance between obstacles based on jump distance
+- Dynamically calculate spacing depending on player speed
+- Avoid spawning obstacles too close after previous one
+
+4. GAME FAIRNESS
+- Player should NEVER die if timing is correct
+- Make gameplay skill-based, not luck-based
+- Add slight forgiveness window for near-miss collisions
+
+5. GAME FEEL IMPROVEMENTS
+- Add squash/stretch effect on jump and landing
+- Add subtle screen shake on landing or collision
+- Smooth velocity transitions
+- Improve responsiveness of controls
+
+6. DEBUG MODE (IMPORTANT)
+- Add optional debug view to show:
+  - player hitbox
+  - obstacle hitboxes
+  - collision boundaries
+This should help visually verify fairness
+
+7. CLEAN CODE
+- Keep code modular and readable
+- Do not break existing structure
+- Only improve and refactor where necessary
+
+GOAL:
+Make the game feel fair, responsive, and polished like a professional endless runner.
+Perfect timing should ALWAYS succeed.
+
+Balance the game so difficulty increases smoothly without creating impossible situations. Ensure early game is easy and later game is challenging but fair.
+
