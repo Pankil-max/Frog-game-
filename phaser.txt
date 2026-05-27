@@ -1,0 +1,66 @@
+You are a senior Android deployment engineer and cross-platform game packaging expert.
+
+I already have a fully working Phaser (HTML5/JavaScript) game that runs correctly in the browser. The game is complete and tested.
+
+Your job is to convert this existing Phaser project into a production-ready Android app and guide me through publishing it on Google Play Store.
+
+Important:
+
+* Use the BEST modern approach for Phaser Android deployment.
+* Prefer Capacitor unless there is a clearly superior option.
+* Focus on practical execution only.
+* Do NOT give unnecessary theory or long explanations.
+* Give exact commands, configs, file structures, and implementation steps.
+* Assume I have zero Android setup currently.
+
+Goals:
+
+1. Convert Phaser project into Android Studio project
+2. Make app production-ready
+3. Optimize for low-end Android devices
+4. Build signed AAB for Play Store release
+5. Publish successfully on Google Play Console
+
+Requirements:
+
+* Step-by-step setup from scratch
+* Install required software/tools
+* Configure Android SDK properly
+* Create Capacitor project correctly
+* Connect/build Phaser web assets
+* Configure fullscreen immersive gameplay
+* Force landscape mode
+* Handle back button properly
+* Optimize WebView performance
+* Enable hardware acceleration
+* Prevent common Android WebView issues
+* Add app icon + adaptive icon
+* Add splash screen
+* Configure app name/package ID/versioning
+* Configure permissions minimally
+* Production-ready Gradle settings
+* Release build optimizations
+* Shrink/minify if safe
+* APK generation (optional)
+* AAB generation (required)
+* Keystore creation and signing
+* Play Console setup
+* Internal testing release
+* Production release checklist
+
+Output format:
+
+* Give one step at a time in correct order
+* Include exact terminal commands
+* Include exact config/code changes
+* Explain where files should be placed
+* Use modern best practices only
+* Avoid deprecated Android methods
+* Keep instructions concise and implementation-focused
+
+At the end, provide:
+
+* final Android project structure
+* release checklist
+* common Phaser-on-Android mistakes to avoid
+* recommended Android settings for best game performance

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frog Rush 2 - Test</title>
+  <style>
+    body {
+      background: #020b18;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+      color: #22d3ee;
+    }
+    #status {
+      text-align: center;
+    }
+    #error {
+      color: #ef4444;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="status">
+    <h1>Loading Phaser...</h1>
+    <p id="msg">Checking library...</p>
+    <div id="error"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.90.0/phaser.min.js"></script>
+  <script>
+    document.getElementById('msg').textContent = 'Phaser loaded: ' + typeof Phaser;
+
+    if (typeof Phaser !== 'undefined') {
+      document.querySelector('h1').textContent = 'Phaser OK!';
+
+      class IntroScene extends Phaser.Scene {
+        constructor() {
+          super('Intro');
+        }
+
+        create() {
+          document.getElementById('msg').textContent = 'Scene created!';
+
+          // Text
+          this.add.text(200, 150, 'FROG RUSH 2', {
+            fontSize: '32px',
+            color: '#22d3ee',
+            fontFamily: 'Arial'
+          }).setOrigin(0.5);
+
+          this.add.text(200, 200, 'Game loaded successfully!', {
+            fontSize: '16px',
+            color: '#64748b'
+          }).setOrigin(0.5);
+
+          // Animate text
+          const txt = this.add.text(200, 250, 'PRESS SPACE TO START', {
+            fontSize: '14px',
+            color: '#22d3ee'
+          }).setOrigin(0.5);
+
+          this.tweens.add({
+            targets: txt,
+            alpha: 0.3,
+            duration: 500,
+            yoyo: true,
+            repeat: -1
+          });
+
+          // Listen for space
+          this.input.keyboard.once('keydown-SPACE', () => {
+            document.getElementById('status').innerHTML = '<h1>Starting Game!</h1><p>Check console for errors.</p>';
+            this.scene.start('MainGame');
+          });
+        }
+      }
+
+      class MainGame extends Phaser.Scene {
+        constructor() {
+          super('MainGame');
+        }
+
+        create() {
+          this.add.text(200, 150, 'MAIN GAME SCENE', {
+            fontSize: '28px',
+            color: '#f472b6'
+          }).setOrigin(0.5);
+
+          this.add.text(200, 200, 'Load game.js for full experience', {
+            fontSize: '14px',
+            color: '#94a3b8'
+          }).setOrigin(0.5);
+        }
+      }
+
+      // Create a simple game
+      const config = {
+        type: Phaser.AUTO,
+        width: 400,
+        height: 300,
+        backgroundColor: '#020b18',
+        scene: [IntroScene, MainGame]
+      };
+
+      const game = new Phaser.Game(config);
+
+      document.getElementById('msg').textContent = 'Game created!';
+    } else {
+      document.querySelector('h1').textContent = 'Phaser Failed to Load';
+      document.getElementById('error').style.display = 'block';
+      document.getElementById('error').textContent = 'Could not load Phaser.js. Check internet connection.';
+    }
+  </script>
+</body>
+</html>
